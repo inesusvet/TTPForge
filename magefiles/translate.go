@@ -49,38 +49,37 @@ import (
 )
 
 type AtomicSchema struct {
-	AttackTechnique string `yaml:"attack_technique"`
-	DisplayName     string `yaml:"display_name"`
-	AtomicTests     []Test `yaml:"atomic_tests"`
+	AttackTechnique string       `yaml:"attack_technique"`
+	DisplayName     string       `yaml:"display_name"`
+	AtomicTests     []AtomicTest `yaml:"atomic_tests"`
 }
 
 // TTP represents the top-level structure for a TTP
 // (Tactics, Techniques, and Procedures) object.
 type TTP struct {
-	Name        string `yaml:"name,omitempty"`
-	Description string `yaml:"description"`
-	Mitre       Mitre
-	Environment map[string]string `yaml:"env,flow,omitempty"`
-	Steps       []Step            `yaml:"steps,omitempty,flow"`
+	Name        string
+	Description string            `yaml:"description,omitempty"`
+	Environment map[string]string `yaml:"env,omitempty,flow"`
 	ArgSpecs    []args.Spec       `yaml:"args,omitempty,flow"`
+	Mitre       Mitre
+	Steps       []Step
 	// Omit WorkDir, but expose for testing.
 	WorkDir string `yaml:"-"`
 }
 
-type Test struct {
-	Name                   string   `yaml:"name"`
-	Description            string   `yaml:"description"`
-	SupportedPlatforms     []string `yaml:"supported_platforms"`
-	Executor               Executor `yaml:"executor"`
-	InputArguments         map[string]InputArgument
-	DependencyExecutorName string `yaml:"dependency_executor_name"`
+type AtomicTest struct {
+	Name                   string             `yaml:"name"`
+	Description            string             `yaml:"description"`
+	SupportedPlatforms     []string           `yaml:"supported_platforms"`
+	Executor               AtomicTestExecutor `yaml:"executor"`
+	DependencyExecutorName string             `yaml:"dependency_executor_name"`
 	Dependencies           []Dependency
+	InputArguments         map[string]InputArgument
 }
 
-type Executor struct {
-	Name           string
+type AtomicTestExecutor struct {
+	Name           string `yaml:"name,omitempty"`
 	Command        string
-	Steps          string
 	CleanupCommand string `yaml:"cleanup_command"`
 }
 
@@ -97,27 +96,29 @@ type Dependency struct {
 }
 
 type Mitre struct {
-	Tactics       *[]string
-	Techniques    []string
-	Subtechniques *[]string
+	// TODO: Find tactics by technique from Mitre data
+	Tactics       []string `yaml:"tactics,omitempty"`
+	Techniques    []string `yaml:"techniques,omitempty"`
+	Subtechniques []string `yaml:"subtechniques,omitempty"`
 }
 
 type Step struct {
-	Name    string
-	Inline  string
-	Cleanup CleanupAct
-	Args    []Spec
+	Name     string         `yaml:"name"`
+	Inline   string         `yaml:"inline,omitempty"`
+	Executor string         `yaml:"executor,omitempty"`
+	Cleanup  CleanupAction  `yaml:"cleanup,omitempty"`
+	Args     []ArgumentSpec `yaml:"args,omitempty,flow"`
 }
 
-type CleanupAct struct {
+type CleanupAction struct {
 	Inline string
 }
 
-type Spec struct {
-	Name        string
-	Type        string
-	Default     string
-	Description string
+type ArgumentSpec struct {
+	Name        string `yaml:"name"`
+	Type        string `yaml:"type,omitempty"`
+	Default     string `yaml:"default,omitempty"`
+	Description string `yaml:"description,omitempty"`
 }
 
 func ConvertSchema(atomic AtomicSchema) TTP {
@@ -128,16 +129,17 @@ func ConvertSchema(atomic AtomicSchema) TTP {
 
 	for _, test := range atomic.AtomicTests {
 		step := Step{
-			Name:   formatStepName(test.Name),
-			Inline: test.Executor.Command,
-			Cleanup: CleanupAct{
+			Name:     formatStepName(test.Name),
+			Inline:   test.Executor.Command,
+			Executor: test.Executor.Name,
+			Cleanup: CleanupAction{
 				Inline: test.Executor.CleanupCommand,
 			},
 		}
 
 		// Populate Args for each step from the test's InputArguments
 		for argName, inputArg := range test.InputArguments {
-			spec := Spec{
+			spec := ArgumentSpec{
 				Name:        argName,
 				Type:        inputArg.Type,
 				Default:     fmt.Sprintf("%v", inputArg.Default), // convert interface{} to string
