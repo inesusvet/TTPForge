@@ -57,9 +57,9 @@ type AtomicSchema struct {
 // TTP represents the top-level structure for a TTP
 // (Tactics, Techniques, and Procedures) object.
 type TTP struct {
-	Name        string            `yaml:"name,omitempty"`
-	Description string            `yaml:"description"`
-	Mitre		Mitre
+	Name        string `yaml:"name,omitempty"`
+	Description string `yaml:"description"`
+	Mitre       Mitre
 	Environment map[string]string `yaml:"env,flow,omitempty"`
 	Steps       []Step            `yaml:"steps,omitempty,flow"`
 	ArgSpecs    []args.Spec       `yaml:"args,omitempty,flow"`
@@ -97,9 +97,9 @@ type Dependency struct {
 }
 
 type Mitre struct {
-	Tactics       []string
+	Tactics       *[]string
 	Techniques    []string
-	Subtechniques []string
+	Subtechniques *[]string
 }
 
 type Step struct {
@@ -219,8 +219,8 @@ func ConvertYAMLSchema(ttpPath string) error {
 	}
 
 	// Write to the specified output path
-	outputDir := filepath.Join(os.Getenv("HOME"), ".ttpforge", "repos", "forgearmory", "ttps", "art", filepath.Base(ttpPath))
-	outputFilePath := filepath.Join(outputDir, filepath.Base(ttpPath)+".yaml")
+	outputDir := ttpPath
+	outputFilePath := filepath.Join(outputDir, "output.yaml")
 
 	// Ensure the directory exists
 	err = os.MkdirAll(outputDir, os.ModePerm)
