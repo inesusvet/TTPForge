@@ -59,6 +59,7 @@ type AtomicSchema struct {
 type TTP struct {
 	Name        string            `yaml:"name,omitempty"`
 	Description string            `yaml:"description"`
+	Mitre		Mitre
 	Environment map[string]string `yaml:"env,flow,omitempty"`
 	Steps       []Step            `yaml:"steps,omitempty,flow"`
 	ArgSpecs    []args.Spec       `yaml:"args,omitempty,flow"`
