@@ -42,7 +42,7 @@ type TTP struct {
 	Name        string
 	Description string            `yaml:"description,omitempty"`
 	Environment map[string]string `yaml:"env,omitempty,flow"`
-	Args        []args.Spec       `yaml:"args,omitempty,flow"`
+	Args        []args.Spec       `yaml:"args,omitempty"`
 	Mitre       Mitre
 	Steps       []Step
 	// Omit WorkDir, but expose for testing.
@@ -122,7 +122,7 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 			Inline:   replaceArgumentPlaceholders(test.Executor.Command),
 			Executor: test.Executor.Name,
 			Cleanup: CleanupAction{
-				Inline: test.Executor.CleanupCommand,
+				Inline: replaceArgumentPlaceholders(test.Executor.CleanupCommand),
 			},
 		}
 		ttp.Steps = append(ttp.Steps, step)
