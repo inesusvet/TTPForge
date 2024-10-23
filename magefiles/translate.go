@@ -106,7 +106,7 @@ type Step struct {
 }
 
 type CleanupAction struct {
-	Inline string
+	Inline   string
 	Executor string `yaml:"executor,omitempty"`
 }
 
@@ -155,8 +155,8 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 			Inline:   replaceArgumentPlaceholders(test.Executor.Command, argumentReplacements),
 			Executor: test.Executor.Name,
 			Cleanup: CleanupAction{
-				Inline: replaceArgumentPlaceholders(test.Executor.CleanupCommand, argumentReplacements),
-				Executor: test.Executor.Name
+				Inline:   replaceArgumentPlaceholders(test.Executor.CleanupCommand, argumentReplacements),
+				Executor: test.Executor.Name,
 			},
 		}
 		ttp.Steps = append(ttp.Steps, step)
