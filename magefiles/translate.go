@@ -107,6 +107,7 @@ type Step struct {
 
 type CleanupAction struct {
 	Inline string
+	Executor string `yaml:"executor,omitempty"`
 }
 
 type ArgumentSpec struct {
@@ -136,8 +137,10 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 		argumentReplacements := make(map[string]string, len(test.InputArguments))
 		for argName, inputArg := range test.InputArguments {
 			spec := args.Spec{
-				Name:    argName,
-				Type:    inputArg.Type,
+				Name: argName,
+				Type: inputArg.Type,
+				// TODO: consider path prefix "PathToAtomicsFolder" as magical
+				// TODO: consider prefix "$env:FOOBAR" as magical
 				Default: fmt.Sprintf("%v", inputArg.Default), // convert interface{} to string
 				// TODO: bump ttpforge dependency to support description field
 				// Description: inputArg.Description,
@@ -153,6 +156,7 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 			Executor: test.Executor.Name,
 			Cleanup: CleanupAction{
 				Inline: replaceArgumentPlaceholders(test.Executor.CleanupCommand, argumentReplacements),
+				Executor: test.Executor.Name
 			},
 		}
 		ttp.Steps = append(ttp.Steps, step)
@@ -261,6 +265,7 @@ func ConvertYAMLSchema(ttpPath string) error {
 		if ok {
 			targetTtpList[i].Mitre.Tactics = strings.Split(info.TacticFullNames, ", ")
 			targetTtpList[i].Mitre.Techniques = []string{info.FullName}
+			// TODO: Populate subtechniques when "." in key
 		}
 	}
 
