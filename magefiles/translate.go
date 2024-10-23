@@ -264,8 +264,16 @@ func ConvertYAMLSchema(ttpPath string) error {
 		info, ok := mitreMap.Map[key]
 		if ok {
 			targetTtpList[i].Mitre.Tactics = strings.Split(info.TacticFullNames, ", ")
-			targetTtpList[i].Mitre.Techniques = []string{info.FullName}
-			// TODO: Populate subtechniques when "." in key
+			if strings.Contains(key, ".") {
+				targetTtpList[i].Mitre.Subtechniques = []string{info.FullName}
+				tkey := strings.Split(key, ".")[0]
+				techniqueInfo, ok := mitreMap.Map[tkey]
+				if ok {
+					targetTtpList[i].Mitre.Techniques = []string{techniqueInfo.FullName}
+				}
+			} else {
+				targetTtpList[i].Mitre.Techniques = []string{info.FullName}
+			}
 		}
 	}
 
