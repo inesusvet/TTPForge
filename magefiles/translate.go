@@ -244,7 +244,6 @@ func ConvertYAMLSchema(ttpPath string) error {
 	targetTtpList := ConvertSchema(atomic)
 
 	// Load Mitre TTP map
-	// TODO: figure out why the map is empty
 	mitreMap, err := NewMitreMap("magefiles/ttp_map.json")
 	if err != nil {
 		return err
@@ -278,7 +277,7 @@ func ConvertYAMLSchema(ttpPath string) error {
 		if err != nil {
 			return err
 		}
-		outputFilePath := filepath.Join(outputDir, fmt.Sprintf("%v.yaml", target.Name))
+		outputFilePath := filepath.Join(outputDir, fmt.Sprintf("%v.yaml", target.UUID))
 
 		err = os.WriteFile(outputFilePath, result, os.ModePerm)
 		if err != nil {
