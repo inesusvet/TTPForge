@@ -81,7 +81,7 @@ type Dependency struct {
 
 type Mitre struct {
 	// TODO: Find tactics by technique from Mitre data
-	Tactics       []string `yaml:"tactics"`
+	Tactics       []string `yaml:"tactics,omitempty"`
 	Techniques    []string `yaml:"techniques,omitempty"`
 	Subtechniques []string `yaml:"subtechniques,omitempty"`
 }
@@ -117,17 +117,9 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 				Subtechniques: []string{},
 			},
 		}
-		step := Step{
-			Name:     formatStepName(test.Name),
-			Inline:   replaceArgumentPlaceholders(test.Executor.Command),
-			Executor: test.Executor.Name,
-			Cleanup: CleanupAction{
-				Inline: replaceArgumentPlaceholders(test.Executor.CleanupCommand),
-			},
-		}
-		ttp.Steps = append(ttp.Steps, step)
 
 		// Populate Args for each step from the test's InputArguments
+		argumentReplacements := make(map[string]string, len(test.InputArguments))
 		for argName, inputArg := range test.InputArguments {
 			spec := args.Spec{
 				Name:    argName,
@@ -136,7 +128,19 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 				// Description: inputArg.Description,
 			}
 			ttp.Args = append(ttp.Args, spec)
+			argPlaceholder := fmt.Sprintf("#{%v}", argName)
+			argumentReplacements[argPlaceholder] = fmt.Sprintf("{{.Args.%v}}", argName)
 		}
+
+		step := Step{
+			Name:     formatStepName(test.Name),
+			Inline:   replaceArgumentPlaceholders(test.Executor.Command, argumentReplacements),
+			Executor: test.Executor.Name,
+			Cleanup: CleanupAction{
+				Inline: replaceArgumentPlaceholders(test.Executor.CleanupCommand, argumentReplacements),
+			},
+		}
+		ttp.Steps = append(ttp.Steps, step)
 
 		// TODO: Each atomic test is a separate file in TTPForge world
 		result = append(result, ttp)
@@ -184,10 +188,11 @@ func formatStepName(name string) string {
 	return name
 }
 
-func replaceArgumentPlaceholders(inline string) string {
-	result := strings.ReplaceAll(inline, "#{", "{{")
-	result = strings.ReplaceAll(result, "}", "}}")
-	return result
+func replaceArgumentPlaceholders(inline string, replacements map[string]string) string {
+	for old, new := range replacements {
+		inline = strings.ReplaceAll(inline, old, new)
+	}
+	return inline
 }
 
 // ConvertYAMLSchema reads from a provided TTP path, converts its schema, and writes the result to the specified output path
