@@ -20,6 +20,7 @@ THE SOFTWARE.
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -80,10 +81,18 @@ type Dependency struct {
 }
 
 type Mitre struct {
-	// TODO: Find tactics by technique from Mitre data
 	Tactics       []string `yaml:"tactics,omitempty"`
 	Techniques    []string `yaml:"techniques,omitempty"`
 	Subtechniques []string `yaml:"subtechniques,omitempty"`
+}
+
+type MitreTechniqueInfo struct {
+	FullName        string `json:"full_name"`
+	TacticFullNames string `json:"tactic_full_name"`
+}
+
+type MitreMap struct {
+	Map map[string]MitreTechniqueInfo `json:"techniques"`
 }
 
 type Step struct {
@@ -107,7 +116,7 @@ type ArgumentSpec struct {
 func ConvertSchema(atomic AtomicSchema) []TTP {
 	result := make([]TTP, len(atomic.AtomicTests))
 
-	for _, test := range atomic.AtomicTests {
+	for i, test := range atomic.AtomicTests {
 		ttp := TTP{
 			Name:        test.Name,
 			Description: test.Description,
@@ -125,10 +134,11 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 				Name:    argName,
 				Type:    inputArg.Type,
 				Default: fmt.Sprintf("%v", inputArg.Default), // convert interface{} to string
+				// TODO: bump ttpforge dependency to support description field
 				// Description: inputArg.Description,
 			}
 			ttp.Args = append(ttp.Args, spec)
-			argPlaceholder := fmt.Sprintf("#{%v}", argName)
+			argPlaceholder := fmt.Sprintf("#{%s}", argName) // TODO: consider spaces
 			argumentReplacements[argPlaceholder] = fmt.Sprintf("{{.Args.%v}}", argName)
 		}
 
@@ -142,8 +152,7 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 		}
 		ttp.Steps = append(ttp.Steps, step)
 
-		// TODO: Each atomic test is a separate file in TTPForge world
-		result = append(result, ttp)
+		result[i] = ttp
 	}
 
 	return result
@@ -195,13 +204,30 @@ func replaceArgumentPlaceholders(inline string, replacements map[string]string) 
 	return inline
 }
 
+// Loads local JSON file with all known Mitre tags to build a map from Technique ID to Tactic IDs
+func NewMitreMap(filename string) (*MitreMap, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+	mitreMap := MitreMap{
+		Map: make(map[string]MitreTechniqueInfo),
+	}
+	err = json.Unmarshal(data, &mitreMap)
+	if err != nil {
+		return nil, err
+	}
+
+	return &mitreMap, nil
+}
+
 // ConvertYAMLSchema reads from a provided TTP path, converts its schema, and writes the result to the specified output path
 func ConvertYAMLSchema(ttpPath string) error {
 	if ttpPath == "" {
 		return fmt.Errorf("a valid TTP path must be provided")
 	}
 
-	// Read the original YAML
+	// Read the original YAML file following the naming convention
 	originalYAMLPath := filepath.Join(ttpPath, filepath.Base(ttpPath)+".yaml")
 	data, err := os.ReadFile(originalYAMLPath)
 	if err != nil {
@@ -215,6 +241,29 @@ func ConvertYAMLSchema(ttpPath string) error {
 	}
 
 	targetTtpList := ConvertSchema(atomic)
+
+	// Load Mitre TTP map
+	// TODO: figure out why the map is empty
+	mitreMap, err := NewMitreMap("magefiles/ttp_map.json")
+	if err != nil {
+		return err
+	}
+	fmt.Printf("Build Mitre map: %+v\n", mitreMap)
+
+	// Populating Mitre Tactics
+	for _, ttp := range targetTtpList {
+		fmt.Printf("Processing TTP %s: %s\n", ttp.Name, ttp.Mitre.Techniques)
+		if len(ttp.Mitre.Techniques) != 1 {
+			continue
+		}
+		key := ttp.Mitre.Techniques[0]
+		info, ok := mitreMap.Map[key]
+		if ok {
+			fmt.Printf("Found info for %s: %+v\n", key, info)
+			ttp.Mitre.Tactics = strings.Split(info.TacticFullNames, ", ")
+			ttp.Mitre.Techniques = []string{info.FullName}
+		}
+	}
 
 	// Write to the specified output path
 	outputDir := ttpPath
