@@ -138,7 +138,7 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 				// Description: inputArg.Description,
 			}
 			ttp.Args = append(ttp.Args, spec)
-			argPlaceholder := fmt.Sprintf("#{%s}", argName) // TODO: consider spaces
+			argPlaceholder := fmt.Sprintf("#{%v}", argName) // TODO: consider spaces
 			argumentReplacements[argPlaceholder] = fmt.Sprintf("{{.Args.%v}}", argName)
 		}
 
@@ -210,9 +210,7 @@ func NewMitreMap(filename string) (*MitreMap, error) {
 	if err != nil {
 		return nil, err
 	}
-	mitreMap := MitreMap{
-		Map: make(map[string]MitreTechniqueInfo),
-	}
+	var mitreMap MitreMap
 	err = json.Unmarshal(data, &mitreMap)
 	if err != nil {
 		return nil, err
@@ -248,18 +246,15 @@ func ConvertYAMLSchema(ttpPath string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Printf("Build Mitre map: %+v\n", mitreMap)
 
 	// Populating Mitre Tactics
 	for _, ttp := range targetTtpList {
-		fmt.Printf("Processing TTP %s: %s\n", ttp.Name, ttp.Mitre.Techniques)
 		if len(ttp.Mitre.Techniques) != 1 {
 			continue
 		}
 		key := ttp.Mitre.Techniques[0]
 		info, ok := mitreMap.Map[key]
 		if ok {
-			fmt.Printf("Found info for %s: %+v\n", key, info)
 			ttp.Mitre.Tactics = strings.Split(info.TacticFullNames, ", ")
 			ttp.Mitre.Techniques = []string{info.FullName}
 		}
