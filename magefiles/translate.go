@@ -129,13 +129,41 @@ type ArgumentSpec struct {
 	Description string `yaml:"description,omitempty"`
 }
 
+// Maps platform names from Atomic terms to TTPForge supported
+func NewPlatformMapping() map[string]string {
+	// All supported_platforms found in Atomics repo
+	// {'containers', 'iaas:gcp', 'office-365', 'google-workspace', 'iaas:azure', 'windows', 'macos', 'linux', 'azure-ad', 'iaas:aws'}
+	// TODO: Rely on enum from TTPForge paltforms.go
+	return map[string]string{
+		"linux":   "linux",
+		"macos":   "darwin",
+		"windows": "windows",
+	}
+}
+
+func NewArgumentTypeMapping() map[string]string {
+	// TODO: compare lower-cased strings only
+	return map[string]string{
+		"string":  "string",
+		"url":     "string",
+		"integer": "int",
+		"boolean": "bool",
+		"path":    "path",
+	}
+}
+
 func buildRequirements(test AtomicTest) RequirementsConfig {
+	platformMapping := NewPlatformMapping()
 	result := RequirementsConfig{}
 	for _, platform := range test.SupportedPlatforms {
+		value, ok := platformMapping[platform]
+		if !ok {
+			value = platform
+		}
 		result.Platforms = append(
 			result.Platforms,
 			PlatformSpec{
-				OS: platform,
+				OS: value,
 			},
 		)
 	}
@@ -160,11 +188,16 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 		}
 
 		// Populate Args for each step from the test's InputArguments
+		argumentTypeMapping := NewArgumentTypeMapping()
 		argumentReplacements := make(map[string]string, len(test.InputArguments))
 		for argName, inputArg := range test.InputArguments {
+			typeValue, ok := argumentTypeMapping[inputArg.Type]
+			if !ok {
+				typeValue = inputArg.Type
+			}
 			spec := args.Spec{
 				Name: argName,
-				Type: inputArg.Type,
+				Type: typeValue,
 				// TODO: consider path prefix "PathToAtomicsFolder" as magical
 				// TODO: consider prefix "$env:FOOBAR" as magical
 				Default: fmt.Sprintf("%v", inputArg.Default), // convert interface{} to string
