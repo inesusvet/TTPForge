@@ -170,6 +170,29 @@ func buildRequirements(test AtomicTest) RequirementsConfig {
 	return result
 }
 
+func buildDependencySteps(dependencies []Dependency, executor string) []Step {
+	// TODO: Invent clean up instructions for dependencies
+	var result []Step
+	for _, dep := range dependencies {
+		check := dep.PrereqCommand
+		prep := dep.GetPrereqCommand
+		var inline string
+		if !(executor == "powershell" || executor == "bash" || executor == "sh") {
+			// Cannot auto-build dependency step for this executor
+			continue
+		}
+		// Relying on existing convention of having "exit 1" in case of failed check
+		inline = strings.Replace(check, "exit 1", fmt.Sprintf("{%s}", prep), 1)
+		step := Step{
+			Name:     dep.Description,
+			Inline:   inline,
+			Executor: executor,
+		}
+		result = append(result, step)
+	}
+	return result
+}
+
 func ConvertSchema(atomic AtomicSchema) []TTP {
 	result := make([]TTP, len(atomic.AtomicTests))
 
@@ -207,6 +230,11 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 			ttp.Args = append(ttp.Args, spec)
 			argPlaceholder := fmt.Sprintf("#{%v}", argName) // TODO: consider spaces
 			argumentReplacements[argPlaceholder] = fmt.Sprintf("{{.Args.%v}}", argName)
+		}
+
+		depSteps := buildDependencySteps(test.Dependencies, test.DependencyExecutorName)
+		if len(depSteps) > 0 {
+			ttp.Steps = append(ttp.Steps, depSteps...)
 		}
 
 		step := Step{
