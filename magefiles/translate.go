@@ -55,7 +55,8 @@ type TTP struct {
 
 // TODO: replace this by ttpforge/pkg/blocks/requirements.go#RequirementsConfig
 type RequirementsConfig struct {
-	Platforms []PlatformSpec
+	Platforms       []PlatformSpec
+	ExpectSuperuser bool `yaml:"superuser,omitempty"`
 }
 
 // TODO: replace it by ttpforge/pkg/platforms/spec.go#Spec
@@ -78,9 +79,10 @@ type AtomicTest struct {
 
 type AtomicTestExecutor struct {
 	// TODO: Use existing Executor Enum
-	Name           string `yaml:"name,omitempty"`
-	Command        string
-	CleanupCommand string `yaml:"cleanup_command"`
+	Name              string `yaml:"name,omitempty"`
+	Command           string
+	CleanupCommand    string `yaml:"cleanup_command"`
+	ElevationRequired bool   `yaml:"elevation_required,omitempty"`
 }
 
 type InputArgument struct {
@@ -155,6 +157,9 @@ func NewArgumentTypeMapping() map[string]string {
 func buildRequirements(test AtomicTest) RequirementsConfig {
 	platformMapping := NewPlatformMapping()
 	result := RequirementsConfig{}
+	if test.Executor.ElevationRequired {
+		result.ExpectSuperuser = test.Executor.ElevationRequired
+	}
 	for _, platform := range test.SupportedPlatforms {
 		value, ok := platformMapping[platform]
 		if !ok {
@@ -182,7 +187,9 @@ func buildDependencySteps(dependencies []Dependency, executor string) []Step {
 			continue
 		}
 		// Relying on existing convention of having "exit 1" in case of failed check
-		inline = strings.Replace(check, "exit 1", fmt.Sprintf("{%s}", prep), 1)
+		// NB: check script might have several checks as well as several exit points
+		// we are just replacing all exit points to prep command and hope for idempotency
+		inline = strings.ReplaceAll(check, "exit 1", fmt.Sprintf("{%s}", prep))
 		step := Step{
 			Name:     dep.Description,
 			Inline:   inline,
