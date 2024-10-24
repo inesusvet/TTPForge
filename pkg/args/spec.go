@@ -31,11 +31,12 @@ import (
 
 // Spec defines a CLI argument for the TTP
 type Spec struct {
-	Name    string   `yaml:"name"`
-	Type    string   `yaml:"type,omitempty"`
-	Default string   `yaml:"default,omitempty"`
-	Choices []string `yaml:"choices,omitempty"`
-	Format  string   `yaml:"regexp,omitempty"`
+	Name        string   `yaml:"name"`
+	Type        string   `yaml:"type,omitempty"`
+	Default     string   `yaml:"default,omitempty"`
+	Choices     []string `yaml:"choices,omitempty"`
+	Format      string   `yaml:"regexp,omitempty"`
+	Description string   `yaml:"description,omitempty"`
 
 	formatReg *regexp.Regexp
 }
