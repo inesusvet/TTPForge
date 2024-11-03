@@ -175,7 +175,7 @@ func buildRequirements(test AtomicTest) RequirementsConfig {
 	return result
 }
 
-func buildDependencySteps(dependencies []Dependency, executor string) []Step {
+func buildDependencySteps(dependencies []Dependency, executor string, argumentReplacements map[string]string) []Step {
 	// TODO: Invent clean up instructions for dependencies
 	var result []Step
 	for _, dep := range dependencies {
@@ -189,7 +189,7 @@ func buildDependencySteps(dependencies []Dependency, executor string) []Step {
 		// Relying on existing convention of having "exit 1" in case of failed check
 		// NB: check script might have several checks as well as several exit points
 		// we are just replacing all exit points to prep command and hope for idempotency
-		inline = strings.ReplaceAll(check, "exit 1", fmt.Sprintf("{%s}", prep))
+		inline = strings.ReplaceAll(replaceArgumentPlaceholders(check, argumentReplacements), "exit 1", fmt.Sprintf(" {%s} ", prep))
 		step := Step{
 			Name:     dep.Description,
 			Inline:   inline,
@@ -239,7 +239,7 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 			argumentReplacements[argPlaceholder] = fmt.Sprintf("{{.Args.%v}}", argName)
 		}
 
-		depSteps := buildDependencySteps(test.Dependencies, test.DependencyExecutorName)
+		depSteps := buildDependencySteps(test.Dependencies, test.DependencyExecutorName, argumentReplacements)
 		if len(depSteps) > 0 {
 			ttp.Steps = append(ttp.Steps, depSteps...)
 		}
