@@ -144,13 +144,18 @@ func NewPlatformMapping() map[string]string {
 }
 
 func NewArgumentTypeMapping() map[string]string {
-	// TODO: compare lower-cased strings only
 	return map[string]string{
 		"string":  "string",
 		"url":     "string",
 		"integer": "int",
 		"boolean": "bool",
 		"path":    "path",
+	}
+}
+
+func NewExecutorMapping() map[string]string {
+	return map[string]string{
+		"command_prompt": "cmd",
 	}
 }
 
@@ -198,6 +203,15 @@ func buildDependencySteps(dependencies []Dependency, executor string, argumentRe
 		result = append(result, step)
 	}
 	return result
+}
+
+func translateExecutor(executor string) string {
+	executorMapping := NewExecutorMapping()
+	value, ok := executorMapping[executor]
+	if ok {
+		return value
+	}
+	return executor
 }
 
 func ConvertSchema(atomic AtomicSchema) []TTP {
@@ -248,16 +262,17 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 		}
 
 		inline := replaceArgumentPlaceholders(test.Executor.Command, argumentReplacements)
+		executor := translateExecutor(test.Executor.Name)
 		step := Step{
 			Name:     formatStepName(test.Name),
 			Inline:   inline,
-			Executor: test.Executor.Name,
+			Executor: executor,
 		}
 		cleanUpInline := replaceArgumentPlaceholders(test.Executor.CleanupCommand, argumentReplacements)
 		if cleanUpInline != "" {
 			step.Cleanup = CleanupAction{
 				Inline:   cleanUpInline,
-				Executor: test.Executor.Name,
+				Executor: executor,
 			}
 		}
 		ttp.Steps = append(ttp.Steps, step)
