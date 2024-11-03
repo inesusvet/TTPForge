@@ -226,12 +226,14 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 			if !ok {
 				typeValue = inputArg.Type
 			}
+			defaultValue := fmt.Sprintf("%v", inputArg.Default)           // convert interface{} to string
+			defaultValue = strings.ReplaceAll(defaultValue, "\\", "\\\\") // proper escaping
 			spec := args.Spec{
 				Name: argName,
 				Type: typeValue,
 				// TODO: consider path prefix "PathToAtomicsFolder" as magical
 				// TODO: consider prefix "$env:FOOBAR" as magical
-				Default: fmt.Sprintf("%v", inputArg.Default), // convert interface{} to string
+				Default: defaultValue,
 				// TODO: bump ttpforge dependency to support description field
 				// Description: inputArg.Description,
 			}
