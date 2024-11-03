@@ -245,14 +245,18 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 			ttp.Steps = append(ttp.Steps, depSteps...)
 		}
 
+		inline := replaceArgumentPlaceholders(test.Executor.Command, argumentReplacements)
 		step := Step{
 			Name:     formatStepName(test.Name),
-			Inline:   replaceArgumentPlaceholders(test.Executor.Command, argumentReplacements),
+			Inline:   inline,
 			Executor: test.Executor.Name,
-			Cleanup: CleanupAction{
-				Inline:   replaceArgumentPlaceholders(test.Executor.CleanupCommand, argumentReplacements),
+		}
+		cleanUpInline := replaceArgumentPlaceholders(test.Executor.CleanupCommand, argumentReplacements)
+		if cleanUpInline != "" {
+			step.Cleanup = CleanupAction{
+				Inline:   cleanUpInline,
 				Executor: test.Executor.Name,
-			},
+			}
 		}
 		ttp.Steps = append(ttp.Steps, step)
 
