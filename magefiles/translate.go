@@ -186,15 +186,16 @@ func buildDependencySteps(dependencies []Dependency, executor string, argumentRe
 	for _, dep := range dependencies {
 		check := dep.PrereqCommand
 		prep := dep.GetPrereqCommand
-		var inline string
 		if !(executor == "powershell" || executor == "bash" || executor == "sh") {
 			// Cannot auto-build dependency step for this executor
 			continue
 		}
+		check = replaceArgumentPlaceholders(check, argumentReplacements)
+		prep = replaceArgumentPlaceholders(prep, argumentReplacements)
 		// Relying on existing convention of having "exit 1" in case of failed check
 		// NB: check script might have several checks as well as several exit points
 		// we are just replacing all exit points to prep command and hope for idempotency
-		inline = strings.ReplaceAll(replaceArgumentPlaceholders(check, argumentReplacements), "exit 1", fmt.Sprintf(" {%s} ", prep))
+		inline := strings.ReplaceAll(check, "exit 1", fmt.Sprintf(" {\n%s\n} ", prep))
 		step := Step{
 			Name:     dep.Description,
 			Inline:   inline,
