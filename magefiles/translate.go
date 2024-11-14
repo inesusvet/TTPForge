@@ -236,8 +236,8 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 		argumentTypeMapping := NewArgumentTypeMapping()
 		argumentReplacements := make(map[string]string, len(test.InputArguments))
 		for argName, inputArg := range test.InputArguments {
-			lowerCaseArgName := strings.ToLower(argName)
-			typeValue, ok := argumentTypeMapping[lowerCaseArgName]
+			lowerCaseArgType := strings.ToLower(inputArg.Type)
+			typeValue, ok := argumentTypeMapping[lowerCaseArgType]
 			if !ok {
 				typeValue = inputArg.Type
 			}
