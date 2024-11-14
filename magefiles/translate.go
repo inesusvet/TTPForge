@@ -24,6 +24,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"github.com/facebookincubator/ttpforge/pkg/args"
@@ -235,7 +236,15 @@ func ConvertSchema(atomic AtomicSchema) []TTP {
 		// Populate Args for each step from the test's InputArguments
 		argumentTypeMapping := NewArgumentTypeMapping()
 		argumentReplacements := make(map[string]string, len(test.InputArguments))
-		for argName, inputArg := range test.InputArguments {
+
+		argNames := make([]string, 0, len(test.InputArguments))
+		for argName := range test.InputArguments {
+			argNames = append(argNames, argName)
+		}
+		sort.Strings(argNames)
+
+		for _, argName := range argNames {
+			inputArg := test.InputArguments[argName]
 			lowerCaseArgType := strings.ToLower(inputArg.Type)
 			typeValue, ok := argumentTypeMapping[lowerCaseArgType]
 			if !ok {
