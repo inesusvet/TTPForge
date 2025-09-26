@@ -136,7 +136,7 @@ type ArgumentSpec struct {
 func NewPlatformMapping() map[string]string {
 	// All supported_platforms found in Atomics repo
 	// {'containers', 'iaas:gcp', 'office-365', 'google-workspace', 'iaas:azure', 'windows', 'macos', 'linux', 'azure-ad', 'iaas:aws'}
-	// TODO: Rely on enum from TTPForge paltforms.go
+	// TODO: Rely on enum from TTPForge platforms.go
 	return map[string]string{
 		"linux":   "linux",
 		"macos":   "darwin",

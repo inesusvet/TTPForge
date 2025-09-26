@@ -22,16 +22,16 @@ exercise the test.
 
 ## Steps required for translation
 
-The TTPForge engine supports only one implementation of a TTP per file. 
-This is why you should expect several new files to appear in the target 
-directory. By default the resulting YAML files have unique UUID as its 
+The TTPForge engine supports only one implementation of a TTP per file.
+This is why you should expect several new files to appear in the target
+directory. By default the resulting YAML files have unique UUID as its
 name. This UUID is taken from the corresponding test.
- 
+
 Each resulting file has MITRE TTP id tags as well as platform requirements.
- 
+
 Resulting YAML file has all arguments defined in the corresponding Atomic
 test.
- 
+
 Please note that the Prerequisites concept is not supported by TTPForge
 engine. This is why check for such prerequisites and their acquisition is
 kept as a separate step in the resulting YAML file.
@@ -47,21 +47,21 @@ kept as a separate step in the resulting YAML file.
 4. Run the translation script passing directory containing the ART YAML file.
    For example `mage convertYAMLSchema ~/atomic-red-team/atomics/T1003.002`
 5. Test the translated YAML file with TTPForge.
- 
+
 ## Testing
- 
-As the majority of Atomic tests are Windows specific, let's describe the 
+
+As the majority of Atomic tests are Windows specific, let's describe the
 testing approach using this platform.
 
-1. Enable Windows Sandbox following 
-   [the official guide](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview) 
+1. Enable Windows Sandbox following
+   [the official guide](https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-overview)
    to evade EDR noise.
-2. Download latest TTPForge binary 
+2. Download latest TTPForge binary
    [release](https://github.com/facebookincubator/TTPForge/releases) from
    github.
 3. Run TTPForge on translated YAML file using `--dry-run` mode
 4. Run TTPForge for real life.
- 
+
 ## Feedback
 Please send your questions to the
 [original issue](https://github.com/facebookincubator/TTPForge/issues/83) on
