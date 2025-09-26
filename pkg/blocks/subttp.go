@@ -63,6 +63,7 @@ func (s *SubTTPStep) Validate(execCtx TTPExecutionContext) error {
 		return errors.New("a TTP reference is required and must not be empty")
 	}
 
+	// validate subttp
 	if err := s.loadSubTTP(execCtx); err != nil {
 		return err
 	}
@@ -70,14 +71,34 @@ func (s *SubTTPStep) Validate(execCtx TTPExecutionContext) error {
 	return s.ttp.Validate(execCtx)
 }
 
+// Template takes each applicable field in the step and replaces any template strings with their resolved values.
+//
+// **Returns:**
+//
+// error: error if template resolution fails, nil otherwise
+func (s *SubTTPStep) Template(execCtx TTPExecutionContext) error {
+	var err error
+
+	for key, value := range s.Args {
+		s.Args[key], err = execCtx.templateStep(value)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 // Execute runs each step of the TTP file associated with the SubTTPStep
 // and manages the outputs and cleanup steps.
 func (s *SubTTPStep) Execute(_ TTPExecutionContext) (*ActResult, error) {
 	logging.L().Infof("[*] Executing Sub TTP: %s", s.TtpRef)
+	logging.IncreaseIndentLevel()
 	runErr := s.ttp.RunSteps(*s.subExecCtx)
 	if runErr != nil {
 		return &ActResult{}, runErr
 	}
+	logging.DecreaseIndentLevel()
 	logging.L().Info("[*] Completed SubTTP - No Errors :)")
 
 	// just a little annoying plumbing due to subtle type differences
@@ -137,7 +158,7 @@ func (s *SubTTPStep) loadSubTTP(execCtx TTPExecutionContext) error {
 		return err
 	}
 
-	ttps, ctx, err := LoadTTP(subTTPAbsPath, repo.GetFs(), &execCtx.Cfg, subArgsKv)
+	ttps, ctx, err := LoadTTP(subTTPAbsPath, repo.GetFs(), &execCtx.Cfg, execCtx.Vars.StepVars, subArgsKv)
 	if err != nil {
 		return err
 	}

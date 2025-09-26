@@ -31,6 +31,7 @@ import (
 	"github.com/Masterminds/sprig/v3"
 	"github.com/facebookincubator/ttpforge/pkg/args"
 	"github.com/facebookincubator/ttpforge/pkg/logging"
+	"github.com/facebookincubator/ttpforge/pkg/platforms"
 	"github.com/facebookincubator/ttpforge/pkg/preprocess"
 	"github.com/spf13/afero"
 	"gopkg.in/yaml.v3"
@@ -40,7 +41,8 @@ import (
 // runtime parameters used in the
 // TTP template rendering process
 type RenderParameters struct {
-	Args map[string]interface{}
+	Args     map[string]interface{}
+	Platform platforms.Spec
 }
 
 // RenderTemplatedTTP is a function that utilizes Golang's `text/template` for template substitution.
@@ -96,8 +98,7 @@ func RenderTemplatedTTP(ttpStr string, rp RenderParameters) (*TTP, error) {
 // *TTP: Pointer to the created TTP instance, or nil if the file is empty or invalid.
 // TTPExecutionContext: the initialized TTPExecutionContext suitable for passing to TTP.Execute(...)
 // err: An error if the file contains invalid data or cannot be read.
-func LoadTTP(ttpFilePath string, fsys afero.Fs, execCfg *TTPExecutionConfig, argsKvStrs []string) (*TTP, *TTPExecutionContext, error) {
-
+func LoadTTP(ttpFilePath string, fsys afero.Fs, execCfg *TTPExecutionConfig, stepVars map[string]string, argsKvStrs []string) (*TTP, *TTPExecutionContext, error) {
 	ttpBytes, err := readTTPBytes(ttpFilePath, fsys)
 	if err != nil {
 		return nil, nil, err
@@ -125,7 +126,8 @@ func LoadTTP(ttpFilePath string, fsys afero.Fs, execCfg *TTPExecutionConfig, arg
 	}
 
 	rp := RenderParameters{
-		Args: argValues,
+		Args:     argValues,
+		Platform: platforms.GetCurrentPlatformSpec(),
 	}
 	ttp, err := RenderTemplatedTTP(string(ttpBytes), rp)
 	if err != nil {
@@ -150,16 +152,10 @@ func LoadTTP(ttpFilePath string, fsys afero.Fs, execCfg *TTPExecutionConfig, arg
 		ttp.WorkDir = wd
 	}
 
-	execCtx := TTPExecutionContext{
-		Cfg: *execCfg,
-		Vars: &TTPExecutionVars{
-			WorkDir: ttp.WorkDir,
-		},
-		StepResults:       NewStepResultsRecord(),
-		actionResultsChan: make(chan *ActResult, 1),
-		errorsChan:        make(chan error, 1),
-		shutdownChan:      SetupSignalHandler(),
-	}
+	execCtx := NewTTPExecutionContext()
+	execCtx.Cfg = *execCfg
+	execCtx.Vars.WorkDir = ttp.WorkDir
+	execCtx.Vars.StepVars = stepVars
 
 	err = ttp.Validate(execCtx)
 	if err != nil {

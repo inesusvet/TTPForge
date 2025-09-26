@@ -22,3 +22,7 @@ builds:
     goamd64:
       - v2
       - v3
+    # Ignore Windows arm is not compatable with gopsutil.
+    ignore:
+      - goos: windows
+        goarch: arm

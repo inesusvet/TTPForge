@@ -1,0 +1,2552 @@
+{
+  "techniques": {
+    "T1001": {
+      "full_name": "T1001: Data Obfuscation",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1001.001": {
+      "full_name": "T1001.001: Junk Data",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1001.002": {
+      "full_name": "T1001.002: Steganography",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1001.003": {
+      "full_name": "T1001.003: Protocol Impersonation",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1003": {
+      "full_name": "T1003: OS Credential Dumping",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1003.001": {
+      "full_name": "T1003.001: LSASS Memory",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1003.002": {
+      "full_name": "T1003.002: Security Account Manager",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1003.003": {
+      "full_name": "T1003.003: NTDS",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1003.004": {
+      "full_name": "T1003.004: LSA Secrets",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1003.005": {
+      "full_name": "T1003.005: Cached Domain Credentials",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1003.006": {
+      "full_name": "T1003.006: DCSync",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1003.007": {
+      "full_name": "T1003.007: Proc Filesystem",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1003.008": {
+      "full_name": "T1003.008: /etc/passwd and /etc/shadow",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1005": {
+      "full_name": "T1005: Data from Local System",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1006": {
+      "full_name": "T1006: Direct Volume Access",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1007": {
+      "full_name": "T1007: System Service Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1008": {
+      "full_name": "T1008: Fallback Channels",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1010": {
+      "full_name": "T1010: Application Window Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1011": {
+      "full_name": "T1011: Exfiltration Over Other Network Medium",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1011.001": {
+      "full_name": "T1011.001: Exfiltration Over Bluetooth",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1012": {
+      "full_name": "T1012: Query Registry",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1014": {
+      "full_name": "T1014: Rootkit",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1016": {
+      "full_name": "T1016: System Network Configuration Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1016.001": {
+      "full_name": "T1016.001: Internet Connection Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1016.002": {
+      "full_name": "T1016.002: Wi-Fi Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1018": {
+      "full_name": "T1018: Remote System Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1020": {
+      "full_name": "T1020: Automated Exfiltration",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1020.001": {
+      "full_name": "T1020.001: Traffic Duplication",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1021": {
+      "full_name": "T1021: Remote Services",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1021.001": {
+      "full_name": "T1021.001: Remote Desktop Protocol",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1021.002": {
+      "full_name": "T1021.002: SMB/Windows Admin Shares",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1021.003": {
+      "full_name": "T1021.003: Distributed Component Object Model",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1021.004": {
+      "full_name": "T1021.004: SSH",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1021.005": {
+      "full_name": "T1021.005: VNC",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1021.006": {
+      "full_name": "T1021.006: Windows Remote Management",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1021.007": {
+      "full_name": "T1021.007: Cloud Services",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1021.008": {
+      "full_name": "T1021.008: Direct Cloud VM Connections",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1025": {
+      "full_name": "T1025: Data from Removable Media",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1027": {
+      "full_name": "T1027: Obfuscated Files or Information",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.001": {
+      "full_name": "T1027.001: Binary Padding",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.002": {
+      "full_name": "T1027.002: Software Packing",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.003": {
+      "full_name": "T1027.003: Steganography",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.004": {
+      "full_name": "T1027.004: Compile After Delivery",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.005": {
+      "full_name": "T1027.005: Indicator Removal from Tools",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.006": {
+      "full_name": "T1027.006: HTML Smuggling",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.007": {
+      "full_name": "T1027.007: Dynamic API Resolution",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.008": {
+      "full_name": "T1027.008: Stripped Payloads",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.009": {
+      "full_name": "T1027.009: Embedded Payloads",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.010": {
+      "full_name": "T1027.010: Command Obfuscation",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.011": {
+      "full_name": "T1027.011: Fileless Storage",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.012": {
+      "full_name": "T1027.012: LNK Icon Smuggling",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1027.013": {
+      "full_name": "T1027.013: Encrypted/Encoded File",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1029": {
+      "full_name": "T1029: Scheduled Transfer",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1030": {
+      "full_name": "T1030: Data Transfer Size Limits",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1033": {
+      "full_name": "T1033: System Owner/User Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1036": {
+      "full_name": "T1036: Masquerading",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1036.001": {
+      "full_name": "T1036.001: Invalid Code Signature",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1036.002": {
+      "full_name": "T1036.002: Right-to-Left Override",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1036.003": {
+      "full_name": "T1036.003: Rename System Utilities",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1036.004": {
+      "full_name": "T1036.004: Masquerade Task or Service",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1036.005": {
+      "full_name": "T1036.005: Match Legitimate Name or Location",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1036.006": {
+      "full_name": "T1036.006: Space after Filename",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1036.007": {
+      "full_name": "T1036.007: Double File Extension",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1036.008": {
+      "full_name": "T1036.008: Masquerade File Type",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1036.009": {
+      "full_name": "T1036.009: Break Process Trees",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1037": {
+      "full_name": "T1037: Boot or Logon Initialization Scripts",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1037.001": {
+      "full_name": "T1037.001: Logon Script (Windows)",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1037.002": {
+      "full_name": "T1037.002: Login Hook",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1037.003": {
+      "full_name": "T1037.003: Network Logon Script",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1037.004": {
+      "full_name": "T1037.004: RC Scripts",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1037.005": {
+      "full_name": "T1037.005: Startup Items",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1039": {
+      "full_name": "T1039: Data from Network Shared Drive",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1040": {
+      "full_name": "T1040: Network Sniffing",
+      "tactic_full_name": "TA0006: Credential Access, TA0007: Discovery"
+    },
+    "T1041": {
+      "full_name": "T1041: Exfiltration Over C2 Channel",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1046": {
+      "full_name": "T1046: Network Service Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1047": {
+      "full_name": "T1047: Windows Management Instrumentation",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1048": {
+      "full_name": "T1048: Exfiltration Over Alternative Protocol",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1048.001": {
+      "full_name": "T1048.001: Exfiltration Over Symmetric Encrypted Non-C2 Protocol",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1048.002": {
+      "full_name": "T1048.002: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1048.003": {
+      "full_name": "T1048.003: Exfiltration Over Unencrypted Non-C2 Protocol",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1049": {
+      "full_name": "T1049: System Network Connections Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1052": {
+      "full_name": "T1052: Exfiltration Over Physical Medium",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1052.001": {
+      "full_name": "T1052.001: Exfiltration over USB",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1053": {
+      "full_name": "T1053: Scheduled Task/Job",
+      "tactic_full_name": "TA0002: Execution, TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1053.002": {
+      "full_name": "T1053.002: At",
+      "tactic_full_name": "TA0002: Execution, TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1053.003": {
+      "full_name": "T1053.003: Cron",
+      "tactic_full_name": "TA0002: Execution, TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1053.005": {
+      "full_name": "T1053.005: Scheduled Task",
+      "tactic_full_name": "TA0002: Execution, TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1053.006": {
+      "full_name": "T1053.006: Systemd Timers",
+      "tactic_full_name": "TA0002: Execution, TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1053.007": {
+      "full_name": "T1053.007: Container Orchestration Job",
+      "tactic_full_name": "TA0002: Execution, TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1055": {
+      "full_name": "T1055: Process Injection",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.001": {
+      "full_name": "T1055.001: Dynamic-link Library Injection",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.002": {
+      "full_name": "T1055.002: Portable Executable Injection",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.003": {
+      "full_name": "T1055.003: Thread Execution Hijacking",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.004": {
+      "full_name": "T1055.004: Asynchronous Procedure Call",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.005": {
+      "full_name": "T1055.005: Thread Local Storage",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.008": {
+      "full_name": "T1055.008: Ptrace System Calls",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.009": {
+      "full_name": "T1055.009: Proc Memory",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.011": {
+      "full_name": "T1055.011: Extra Window Memory Injection",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.012": {
+      "full_name": "T1055.012: Process Hollowing",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.013": {
+      "full_name": "T1055.013: Process Doppelg\u00e4nging",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.014": {
+      "full_name": "T1055.014: VDSO Hijacking",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1055.015": {
+      "full_name": "T1055.015: ListPlanting",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1056": {
+      "full_name": "T1056: Input Capture",
+      "tactic_full_name": "TA0009: Collection, TA0006: Credential Access"
+    },
+    "T1056.001": {
+      "full_name": "T1056.001: Keylogging",
+      "tactic_full_name": "TA0009: Collection, TA0006: Credential Access"
+    },
+    "T1056.002": {
+      "full_name": "T1056.002: GUI Input Capture",
+      "tactic_full_name": "TA0009: Collection, TA0006: Credential Access"
+    },
+    "T1056.003": {
+      "full_name": "T1056.003: Web Portal Capture",
+      "tactic_full_name": "TA0009: Collection, TA0006: Credential Access"
+    },
+    "T1056.004": {
+      "full_name": "T1056.004: Credential API Hooking",
+      "tactic_full_name": "TA0009: Collection, TA0006: Credential Access"
+    },
+    "T1057": {
+      "full_name": "T1057: Process Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1059": {
+      "full_name": "T1059: Command and Scripting Interpreter",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.001": {
+      "full_name": "T1059.001: PowerShell",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.002": {
+      "full_name": "T1059.002: AppleScript",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.003": {
+      "full_name": "T1059.003: Windows Command Shell",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.004": {
+      "full_name": "T1059.004: Unix Shell",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.005": {
+      "full_name": "T1059.005: Visual Basic",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.006": {
+      "full_name": "T1059.006: Python",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.007": {
+      "full_name": "T1059.007: JavaScript",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.008": {
+      "full_name": "T1059.008: Network Device CLI",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.009": {
+      "full_name": "T1059.009: Cloud API",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1059.010": {
+      "full_name": "T1059.010: AutoHotKey & AutoIT",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1068": {
+      "full_name": "T1068: Exploitation for Privilege Escalation",
+      "tactic_full_name": "TA0004: Privilege Escalation"
+    },
+    "T1069": {
+      "full_name": "T1069: Permission Groups Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1069.001": {
+      "full_name": "T1069.001: Local Groups",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1069.002": {
+      "full_name": "T1069.002: Domain Groups",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1069.003": {
+      "full_name": "T1069.003: Cloud Groups",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1070": {
+      "full_name": "T1070: Indicator Removal",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1070.001": {
+      "full_name": "T1070.001: Clear Windows Event Logs",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1070.002": {
+      "full_name": "T1070.002: Clear Linux or Mac System Logs",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1070.003": {
+      "full_name": "T1070.003: Clear Command History",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1070.004": {
+      "full_name": "T1070.004: File Deletion",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1070.005": {
+      "full_name": "T1070.005: Network Share Connection Removal",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1070.006": {
+      "full_name": "T1070.006: Timestomp",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1070.007": {
+      "full_name": "T1070.007: Clear Network Connection History and Configurations",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1070.008": {
+      "full_name": "T1070.008: Clear Mailbox Data",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1070.009": {
+      "full_name": "T1070.009: Clear Persistence",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1071": {
+      "full_name": "T1071: Application Layer Protocol",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1071.001": {
+      "full_name": "T1071.001: Web Protocols",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1071.002": {
+      "full_name": "T1071.002: File Transfer Protocols",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1071.003": {
+      "full_name": "T1071.003: Mail Protocols",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1071.004": {
+      "full_name": "T1071.004: DNS",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1072": {
+      "full_name": "T1072: Software Deployment Tools",
+      "tactic_full_name": "TA0002: Execution, TA0008: Lateral Movement"
+    },
+    "T1074": {
+      "full_name": "T1074: Data Staged",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1074.001": {
+      "full_name": "T1074.001: Local Data Staging",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1074.002": {
+      "full_name": "T1074.002: Remote Data Staging",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1078": {
+      "full_name": "T1078: Valid Accounts",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence, TA0004: Privilege Escalation, TA0001: Initial Access"
+    },
+    "T1078.001": {
+      "full_name": "T1078.001: Default Accounts",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence, TA0004: Privilege Escalation, TA0001: Initial Access"
+    },
+    "T1078.002": {
+      "full_name": "T1078.002: Domain Accounts",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence, TA0004: Privilege Escalation, TA0001: Initial Access"
+    },
+    "T1078.003": {
+      "full_name": "T1078.003: Local Accounts",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence, TA0004: Privilege Escalation, TA0001: Initial Access"
+    },
+    "T1078.004": {
+      "full_name": "T1078.004: Cloud Accounts",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence, TA0004: Privilege Escalation, TA0001: Initial Access"
+    },
+    "T1080": {
+      "full_name": "T1080: Taint Shared Content",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1082": {
+      "full_name": "T1082: System Information Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1083": {
+      "full_name": "T1083: File and Directory Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1087": {
+      "full_name": "T1087: Account Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1087.001": {
+      "full_name": "T1087.001: Local Account",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1087.002": {
+      "full_name": "T1087.002: Domain Account",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1087.003": {
+      "full_name": "T1087.003: Email Account",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1087.004": {
+      "full_name": "T1087.004: Cloud Account",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1090": {
+      "full_name": "T1090: Proxy",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1090.001": {
+      "full_name": "T1090.001: Internal Proxy",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1090.002": {
+      "full_name": "T1090.002: External Proxy",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1090.003": {
+      "full_name": "T1090.003: Multi-hop Proxy",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1090.004": {
+      "full_name": "T1090.004: Domain Fronting",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1091": {
+      "full_name": "T1091: Replication Through Removable Media",
+      "tactic_full_name": "TA0008: Lateral Movement, TA0001: Initial Access"
+    },
+    "T1092": {
+      "full_name": "T1092: Communication Through Removable Media",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1095": {
+      "full_name": "T1095: Non-Application Layer Protocol",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1098": {
+      "full_name": "T1098: Account Manipulation",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1098.001": {
+      "full_name": "T1098.001: Additional Cloud Credentials",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1098.002": {
+      "full_name": "T1098.002: Additional Email Delegate Permissions",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1098.003": {
+      "full_name": "T1098.003: Additional Cloud Roles",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1098.004": {
+      "full_name": "T1098.004: SSH Authorized Keys",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1098.005": {
+      "full_name": "T1098.005: Device Registration",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1098.006": {
+      "full_name": "T1098.006: Additional Container Cluster Roles",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1102": {
+      "full_name": "T1102: Web Service",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1102.001": {
+      "full_name": "T1102.001: Dead Drop Resolver",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1102.002": {
+      "full_name": "T1102.002: Bidirectional Communication",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1102.003": {
+      "full_name": "T1102.003: One-Way Communication",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1104": {
+      "full_name": "T1104: Multi-Stage Channels",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1105": {
+      "full_name": "T1105: Ingress Tool Transfer",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1106": {
+      "full_name": "T1106: Native API",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1110": {
+      "full_name": "T1110: Brute Force",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1110.001": {
+      "full_name": "T1110.001: Password Guessing",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1110.002": {
+      "full_name": "T1110.002: Password Cracking",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1110.003": {
+      "full_name": "T1110.003: Password Spraying",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1110.004": {
+      "full_name": "T1110.004: Credential Stuffing",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1111": {
+      "full_name": "T1111: Multi-Factor Authentication Interception",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1112": {
+      "full_name": "T1112: Modify Registry",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1113": {
+      "full_name": "T1113: Screen Capture",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1114": {
+      "full_name": "T1114: Email Collection",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1114.001": {
+      "full_name": "T1114.001: Local Email Collection",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1114.002": {
+      "full_name": "T1114.002: Remote Email Collection",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1114.003": {
+      "full_name": "T1114.003: Email Forwarding Rule",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1115": {
+      "full_name": "T1115: Clipboard Data",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1119": {
+      "full_name": "T1119: Automated Collection",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1120": {
+      "full_name": "T1120: Peripheral Device Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1123": {
+      "full_name": "T1123: Audio Capture",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1124": {
+      "full_name": "T1124: System Time Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1125": {
+      "full_name": "T1125: Video Capture",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1127": {
+      "full_name": "T1127: Trusted Developer Utilities Proxy Execution",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1127.001": {
+      "full_name": "T1127.001: MSBuild",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1129": {
+      "full_name": "T1129: Shared Modules",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1132": {
+      "full_name": "T1132: Data Encoding",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1132.001": {
+      "full_name": "T1132.001: Standard Encoding",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1132.002": {
+      "full_name": "T1132.002: Non-Standard Encoding",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1133": {
+      "full_name": "T1133: External Remote Services",
+      "tactic_full_name": "TA0003: Persistence, TA0001: Initial Access"
+    },
+    "T1134": {
+      "full_name": "T1134: Access Token Manipulation",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1134.001": {
+      "full_name": "T1134.001: Token Impersonation/Theft",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1134.002": {
+      "full_name": "T1134.002: Create Process with Token",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1134.003": {
+      "full_name": "T1134.003: Make and Impersonate Token",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1134.004": {
+      "full_name": "T1134.004: Parent PID Spoofing",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1134.005": {
+      "full_name": "T1134.005: SID-History Injection",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1135": {
+      "full_name": "T1135: Network Share Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1136": {
+      "full_name": "T1136: Create Account",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1136.001": {
+      "full_name": "T1136.001: Local Account",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1136.002": {
+      "full_name": "T1136.002: Domain Account",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1136.003": {
+      "full_name": "T1136.003: Cloud Account",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1137": {
+      "full_name": "T1137: Office Application Startup",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1137.001": {
+      "full_name": "T1137.001: Office Template Macros",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1137.002": {
+      "full_name": "T1137.002: Office Test",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1137.003": {
+      "full_name": "T1137.003: Outlook Forms",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1137.004": {
+      "full_name": "T1137.004: Outlook Home Page",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1137.005": {
+      "full_name": "T1137.005: Outlook Rules",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1137.006": {
+      "full_name": "T1137.006: Add-ins",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1140": {
+      "full_name": "T1140: Deobfuscate/Decode Files or Information",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1176": {
+      "full_name": "T1176: Browser Extensions",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1185": {
+      "full_name": "T1185: Browser Session Hijacking",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1187": {
+      "full_name": "T1187: Forced Authentication",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1189": {
+      "full_name": "T1189: Drive-by Compromise",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1190": {
+      "full_name": "T1190: Exploit Public-Facing Application",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1195": {
+      "full_name": "T1195: Supply Chain Compromise",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1195.001": {
+      "full_name": "T1195.001: Compromise Software Dependencies and Development Tools",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1195.002": {
+      "full_name": "T1195.002: Compromise Software Supply Chain",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1195.003": {
+      "full_name": "T1195.003: Compromise Hardware Supply Chain",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1197": {
+      "full_name": "T1197: BITS Jobs",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1199": {
+      "full_name": "T1199: Trusted Relationship",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1200": {
+      "full_name": "T1200: Hardware Additions",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1201": {
+      "full_name": "T1201: Password Policy Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1202": {
+      "full_name": "T1202: Indirect Command Execution",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1203": {
+      "full_name": "T1203: Exploitation for Client Execution",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1204": {
+      "full_name": "T1204: User Execution",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1204.001": {
+      "full_name": "T1204.001: Malicious Link",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1204.002": {
+      "full_name": "T1204.002: Malicious File",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1204.003": {
+      "full_name": "T1204.003: Malicious Image",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1205": {
+      "full_name": "T1205: Traffic Signaling",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence, TA0011: Command and Control"
+    },
+    "T1205.001": {
+      "full_name": "T1205.001: Port Knocking",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence, TA0011: Command and Control"
+    },
+    "T1205.002": {
+      "full_name": "T1205.002: Socket Filters",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence, TA0011: Command and Control"
+    },
+    "T1207": {
+      "full_name": "T1207: Rogue Domain Controller",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1210": {
+      "full_name": "T1210: Exploitation of Remote Services",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1211": {
+      "full_name": "T1211: Exploitation for Defense Evasion",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1212": {
+      "full_name": "T1212: Exploitation for Credential Access",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1213": {
+      "full_name": "T1213: Data from Information Repositories",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1213.001": {
+      "full_name": "T1213.001: Confluence",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1213.002": {
+      "full_name": "T1213.002: Sharepoint",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1213.003": {
+      "full_name": "T1213.003: Code Repositories",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1216": {
+      "full_name": "T1216: System Script Proxy Execution",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1216.001": {
+      "full_name": "T1216.001: PubPrn",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1216.002": {
+      "full_name": "T1216.002: SyncAppvPublishingServer",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1217": {
+      "full_name": "T1217: Browser Information Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1218": {
+      "full_name": "T1218: System Binary Proxy Execution",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.001": {
+      "full_name": "T1218.001: Compiled HTML File",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.002": {
+      "full_name": "T1218.002: Control Panel",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.003": {
+      "full_name": "T1218.003: CMSTP",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.004": {
+      "full_name": "T1218.004: InstallUtil",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.005": {
+      "full_name": "T1218.005: Mshta",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.007": {
+      "full_name": "T1218.007: Msiexec",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.008": {
+      "full_name": "T1218.008: Odbcconf",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.009": {
+      "full_name": "T1218.009: Regsvcs/Regasm",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.010": {
+      "full_name": "T1218.010: Regsvr32",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.011": {
+      "full_name": "T1218.011: Rundll32",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.012": {
+      "full_name": "T1218.012: Verclsid",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.013": {
+      "full_name": "T1218.013: Mavinject",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.014": {
+      "full_name": "T1218.014: MMC",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1218.015": {
+      "full_name": "T1218.015: Electron Applications",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1219": {
+      "full_name": "T1219: Remote Access Software",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1220": {
+      "full_name": "T1220: XSL Script Processing",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1221": {
+      "full_name": "T1221: Template Injection",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1222": {
+      "full_name": "T1222: File and Directory Permissions Modification",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1222.001": {
+      "full_name": "T1222.001: Windows File and Directory Permissions Modification",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1222.002": {
+      "full_name": "T1222.002: Linux and Mac File and Directory Permissions Modification",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1480": {
+      "full_name": "T1480: Execution Guardrails",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1480.001": {
+      "full_name": "T1480.001: Environmental Keying",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1482": {
+      "full_name": "T1482: Domain Trust Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1484": {
+      "full_name": "T1484: Domain or Tenant Policy Modification",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1484.001": {
+      "full_name": "T1484.001: Group Policy Modification",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1484.002": {
+      "full_name": "T1484.002: Trust Modification",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1485": {
+      "full_name": "T1485: Data Destruction",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1486": {
+      "full_name": "T1486: Data Encrypted for Impact",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1489": {
+      "full_name": "T1489: Service Stop",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1490": {
+      "full_name": "T1490: Inhibit System Recovery",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1491": {
+      "full_name": "T1491: Defacement",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1491.001": {
+      "full_name": "T1491.001: Internal Defacement",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1491.002": {
+      "full_name": "T1491.002: External Defacement",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1495": {
+      "full_name": "T1495: Firmware Corruption",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1496": {
+      "full_name": "T1496: Resource Hijacking",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1497": {
+      "full_name": "T1497: Virtualization/Sandbox Evasion",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0007: Discovery"
+    },
+    "T1497.001": {
+      "full_name": "T1497.001: System Checks",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0007: Discovery"
+    },
+    "T1497.002": {
+      "full_name": "T1497.002: User Activity Based Checks",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0007: Discovery"
+    },
+    "T1497.003": {
+      "full_name": "T1497.003: Time Based Evasion",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0007: Discovery"
+    },
+    "T1498": {
+      "full_name": "T1498: Network Denial of Service",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1498.001": {
+      "full_name": "T1498.001: Direct Network Flood",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1498.002": {
+      "full_name": "T1498.002: Reflection Amplification",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1499": {
+      "full_name": "T1499: Endpoint Denial of Service",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1499.001": {
+      "full_name": "T1499.001: OS Exhaustion Flood",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1499.002": {
+      "full_name": "T1499.002: Service Exhaustion Flood",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1499.003": {
+      "full_name": "T1499.003: Application Exhaustion Flood",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1499.004": {
+      "full_name": "T1499.004: Application or System Exploitation",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1505": {
+      "full_name": "T1505: Server Software Component",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1505.001": {
+      "full_name": "T1505.001: SQL Stored Procedures",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1505.002": {
+      "full_name": "T1505.002: Transport Agent",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1505.003": {
+      "full_name": "T1505.003: Web Shell",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1505.004": {
+      "full_name": "T1505.004: IIS Components",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1505.005": {
+      "full_name": "T1505.005: Terminal Services DLL",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1518": {
+      "full_name": "T1518: Software Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1518.001": {
+      "full_name": "T1518.001: Security Software Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1525": {
+      "full_name": "T1525: Implant Internal Image",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1526": {
+      "full_name": "T1526: Cloud Service Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1528": {
+      "full_name": "T1528: Steal Application Access Token",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1529": {
+      "full_name": "T1529: System Shutdown/Reboot",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1530": {
+      "full_name": "T1530: Data from Cloud Storage",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1531": {
+      "full_name": "T1531: Account Access Removal",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1534": {
+      "full_name": "T1534: Internal Spearphishing",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1535": {
+      "full_name": "T1535: Unused/Unsupported Cloud Regions",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1537": {
+      "full_name": "T1537: Transfer Data to Cloud Account",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1538": {
+      "full_name": "T1538: Cloud Service Dashboard",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1539": {
+      "full_name": "T1539: Steal Web Session Cookie",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1542": {
+      "full_name": "T1542: Pre-OS Boot",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1542.001": {
+      "full_name": "T1542.001: System Firmware",
+      "tactic_full_name": "TA0003: Persistence, TA0005: Defense Evasion"
+    },
+    "T1542.002": {
+      "full_name": "T1542.002: Component Firmware",
+      "tactic_full_name": "TA0003: Persistence, TA0005: Defense Evasion"
+    },
+    "T1542.003": {
+      "full_name": "T1542.003: Bootkit",
+      "tactic_full_name": "TA0003: Persistence, TA0005: Defense Evasion"
+    },
+    "T1542.004": {
+      "full_name": "T1542.004: ROMMONkit",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1542.005": {
+      "full_name": "T1542.005: TFTP Boot",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1543": {
+      "full_name": "T1543: Create or Modify System Process",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1543.001": {
+      "full_name": "T1543.001: Launch Agent",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1543.002": {
+      "full_name": "T1543.002: Systemd Service",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1543.003": {
+      "full_name": "T1543.003: Windows Service",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1543.004": {
+      "full_name": "T1543.004: Launch Daemon",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1543.005": {
+      "full_name": "T1543.005: Container Service",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1546": {
+      "full_name": "T1546: Event Triggered Execution",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.001": {
+      "full_name": "T1546.001: Change Default File Association",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.002": {
+      "full_name": "T1546.002: Screensaver",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.003": {
+      "full_name": "T1546.003: Windows Management Instrumentation Event Subscription",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.004": {
+      "full_name": "T1546.004: Unix Shell Configuration Modification",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.005": {
+      "full_name": "T1546.005: Trap",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.006": {
+      "full_name": "T1546.006: LC_LOAD_DYLIB Addition",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.007": {
+      "full_name": "T1546.007: Netsh Helper DLL",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.008": {
+      "full_name": "T1546.008: Accessibility Features",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.009": {
+      "full_name": "T1546.009: AppCert DLLs",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.010": {
+      "full_name": "T1546.010: AppInit DLLs",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.011": {
+      "full_name": "T1546.011: Application Shimming",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.012": {
+      "full_name": "T1546.012: Image File Execution Options Injection",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.013": {
+      "full_name": "T1546.013: PowerShell Profile",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.014": {
+      "full_name": "T1546.014: Emond",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.015": {
+      "full_name": "T1546.015: Component Object Model Hijacking",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1546.016": {
+      "full_name": "T1546.016: Installer Packages",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0003: Persistence"
+    },
+    "T1547": {
+      "full_name": "T1547: Boot or Logon Autostart Execution",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.001": {
+      "full_name": "T1547.001: Registry Run Keys / Startup Folder",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.002": {
+      "full_name": "T1547.002: Authentication Package",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.003": {
+      "full_name": "T1547.003: Time Providers",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.004": {
+      "full_name": "T1547.004: Winlogon Helper DLL",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.005": {
+      "full_name": "T1547.005: Security Support Provider",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.006": {
+      "full_name": "T1547.006: Kernel Modules and Extensions",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.007": {
+      "full_name": "T1547.007: Re-opened Applications",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.008": {
+      "full_name": "T1547.008: LSASS Driver",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.009": {
+      "full_name": "T1547.009: Shortcut Modification",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.010": {
+      "full_name": "T1547.010: Port Monitors",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.012": {
+      "full_name": "T1547.012: Print Processors",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.013": {
+      "full_name": "T1547.013: XDG Autostart Entries",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.014": {
+      "full_name": "T1547.014: Active Setup",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1547.015": {
+      "full_name": "T1547.015: Login Items",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation"
+    },
+    "T1548": {
+      "full_name": "T1548: Abuse Elevation Control Mechanism",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1548.001": {
+      "full_name": "T1548.001: Setuid and Setgid",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1548.002": {
+      "full_name": "T1548.002: Bypass User Account Control",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1548.003": {
+      "full_name": "T1548.003: Sudo and Sudo Caching",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1548.004": {
+      "full_name": "T1548.004: Elevated Execution with Prompt",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1548.005": {
+      "full_name": "T1548.005: Temporary Elevated Cloud Access",
+      "tactic_full_name": "TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1548.006": {
+      "full_name": "T1548.006: TCC Manipulation",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0004: Privilege Escalation"
+    },
+    "T1550": {
+      "full_name": "T1550: Use Alternate Authentication Material",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0008: Lateral Movement"
+    },
+    "T1550.001": {
+      "full_name": "T1550.001: Application Access Token",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0008: Lateral Movement"
+    },
+    "T1550.002": {
+      "full_name": "T1550.002: Pass the Hash",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0008: Lateral Movement"
+    },
+    "T1550.003": {
+      "full_name": "T1550.003: Pass the Ticket",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0008: Lateral Movement"
+    },
+    "T1550.004": {
+      "full_name": "T1550.004: Web Session Cookie",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0008: Lateral Movement"
+    },
+    "T1552": {
+      "full_name": "T1552: Unsecured Credentials",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1552.001": {
+      "full_name": "T1552.001: Credentials In Files",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1552.002": {
+      "full_name": "T1552.002: Credentials in Registry",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1552.003": {
+      "full_name": "T1552.003: Bash History",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1552.004": {
+      "full_name": "T1552.004: Private Keys",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1552.005": {
+      "full_name": "T1552.005: Cloud Instance Metadata API",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1552.006": {
+      "full_name": "T1552.006: Group Policy Preferences",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1552.007": {
+      "full_name": "T1552.007: Container API",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1552.008": {
+      "full_name": "T1552.008: Chat Messages",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1553": {
+      "full_name": "T1553: Subvert Trust Controls",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1553.001": {
+      "full_name": "T1553.001: Gatekeeper Bypass",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1553.002": {
+      "full_name": "T1553.002: Code Signing",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1553.003": {
+      "full_name": "T1553.003: SIP and Trust Provider Hijacking",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1553.004": {
+      "full_name": "T1553.004: Install Root Certificate",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1553.005": {
+      "full_name": "T1553.005: Mark-of-the-Web Bypass",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1553.006": {
+      "full_name": "T1553.006: Code Signing Policy Modification",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1554": {
+      "full_name": "T1554: Compromise Host Software Binary",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1555": {
+      "full_name": "T1555: Credentials from Password Stores",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1555.001": {
+      "full_name": "T1555.001: Keychain",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1555.002": {
+      "full_name": "T1555.002: Securityd Memory",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1555.003": {
+      "full_name": "T1555.003: Credentials from Web Browsers",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1555.004": {
+      "full_name": "T1555.004: Windows Credential Manager",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1555.005": {
+      "full_name": "T1555.005: Password Managers",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1555.006": {
+      "full_name": "T1555.006: Cloud Secrets Management Stores",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1556": {
+      "full_name": "T1556: Modify Authentication Process",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1556.001": {
+      "full_name": "T1556.001: Domain Controller Authentication",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1556.002": {
+      "full_name": "T1556.002: Password Filter DLL",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1556.003": {
+      "full_name": "T1556.003: Pluggable Authentication Modules",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1556.004": {
+      "full_name": "T1556.004: Network Device Authentication",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1556.005": {
+      "full_name": "T1556.005: Reversible Encryption",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1556.006": {
+      "full_name": "T1556.006: Multi-Factor Authentication",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1556.007": {
+      "full_name": "T1556.007: Hybrid Identity",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1556.008": {
+      "full_name": "T1556.008: Network Provider DLL",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1556.009": {
+      "full_name": "T1556.009: Conditional Access Policies",
+      "tactic_full_name": "TA0006: Credential Access, TA0005: Defense Evasion, TA0003: Persistence"
+    },
+    "T1557": {
+      "full_name": "T1557: Adversary-in-the-Middle",
+      "tactic_full_name": "TA0006: Credential Access, TA0009: Collection"
+    },
+    "T1557.001": {
+      "full_name": "T1557.001: LLMNR/NBT-NS Poisoning and SMB Relay",
+      "tactic_full_name": "TA0006: Credential Access, TA0009: Collection"
+    },
+    "T1557.002": {
+      "full_name": "T1557.002: ARP Cache Poisoning",
+      "tactic_full_name": "TA0006: Credential Access, TA0009: Collection"
+    },
+    "T1557.003": {
+      "full_name": "T1557.003: DHCP Spoofing",
+      "tactic_full_name": "TA0006: Credential Access, TA0009: Collection"
+    },
+    "T1558": {
+      "full_name": "T1558: Steal or Forge Kerberos Tickets",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1558.001": {
+      "full_name": "T1558.001: Golden Ticket",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1558.002": {
+      "full_name": "T1558.002: Silver Ticket",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1558.003": {
+      "full_name": "T1558.003: Kerberoasting",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1558.004": {
+      "full_name": "T1558.004: AS-REP Roasting",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1559": {
+      "full_name": "T1559: Inter-Process Communication",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1559.001": {
+      "full_name": "T1559.001: Component Object Model",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1559.002": {
+      "full_name": "T1559.002: Dynamic Data Exchange",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1559.003": {
+      "full_name": "T1559.003: XPC Services",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1560": {
+      "full_name": "T1560: Archive Collected Data",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1560.001": {
+      "full_name": "T1560.001: Archive via Utility",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1560.002": {
+      "full_name": "T1560.002: Archive via Library",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1560.003": {
+      "full_name": "T1560.003: Archive via Custom Method",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1561": {
+      "full_name": "T1561: Disk Wipe",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1561.001": {
+      "full_name": "T1561.001: Disk Content Wipe",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1561.002": {
+      "full_name": "T1561.002: Disk Structure Wipe",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1562": {
+      "full_name": "T1562: Impair Defenses",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.001": {
+      "full_name": "T1562.001: Disable or Modify Tools",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.002": {
+      "full_name": "T1562.002: Disable Windows Event Logging",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.003": {
+      "full_name": "T1562.003: Impair Command History Logging",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.004": {
+      "full_name": "T1562.004: Disable or Modify System Firewall",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.006": {
+      "full_name": "T1562.006: Indicator Blocking",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.007": {
+      "full_name": "T1562.007: Disable or Modify Cloud Firewall",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.008": {
+      "full_name": "T1562.008: Disable or Modify Cloud Logs",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.009": {
+      "full_name": "T1562.009: Safe Mode Boot",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.010": {
+      "full_name": "T1562.010: Downgrade Attack",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.011": {
+      "full_name": "T1562.011: Spoof Security Alerting",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1562.012": {
+      "full_name": "T1562.012: Disable or Modify Linux Audit System",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1563": {
+      "full_name": "T1563: Remote Service Session Hijacking",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1563.001": {
+      "full_name": "T1563.001: SSH Hijacking",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1563.002": {
+      "full_name": "T1563.002: RDP Hijacking",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1564": {
+      "full_name": "T1564: Hide Artifacts",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.001": {
+      "full_name": "T1564.001: Hidden Files and Directories",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.002": {
+      "full_name": "T1564.002: Hidden Users",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.003": {
+      "full_name": "T1564.003: Hidden Window",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.004": {
+      "full_name": "T1564.004: NTFS File Attributes",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.005": {
+      "full_name": "T1564.005: Hidden File System",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.006": {
+      "full_name": "T1564.006: Run Virtual Instance",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.007": {
+      "full_name": "T1564.007: VBA Stomping",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.008": {
+      "full_name": "T1564.008: Email Hiding Rules",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.009": {
+      "full_name": "T1564.009: Resource Forking",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.010": {
+      "full_name": "T1564.010: Process Argument Spoofing",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.011": {
+      "full_name": "T1564.011: Ignore Process Interrupts",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1564.012": {
+      "full_name": "T1564.012: File/Path Exclusions",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1565": {
+      "full_name": "T1565: Data Manipulation",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1565.001": {
+      "full_name": "T1565.001: Stored Data Manipulation",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1565.002": {
+      "full_name": "T1565.002: Transmitted Data Manipulation",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1565.003": {
+      "full_name": "T1565.003: Runtime Data Manipulation",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1566": {
+      "full_name": "T1566: Phishing",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1566.001": {
+      "full_name": "T1566.001: Spearphishing Attachment",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1566.002": {
+      "full_name": "T1566.002: Spearphishing Link",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1566.003": {
+      "full_name": "T1566.003: Spearphishing via Service",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1566.004": {
+      "full_name": "T1566.004: Spearphishing Voice",
+      "tactic_full_name": "TA0001: Initial Access"
+    },
+    "T1567": {
+      "full_name": "T1567: Exfiltration Over Web Service",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1567.001": {
+      "full_name": "T1567.001: Exfiltration to Code Repository",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1567.002": {
+      "full_name": "T1567.002: Exfiltration to Cloud Storage",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1567.003": {
+      "full_name": "T1567.003: Exfiltration to Text Storage Sites",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1567.004": {
+      "full_name": "T1567.004: Exfiltration Over Webhook",
+      "tactic_full_name": "TA0010: Exfiltration"
+    },
+    "T1568": {
+      "full_name": "T1568: Dynamic Resolution",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1568.001": {
+      "full_name": "T1568.001: Fast Flux DNS",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1568.002": {
+      "full_name": "T1568.002: Domain Generation Algorithms",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1568.003": {
+      "full_name": "T1568.003: DNS Calculation",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1569": {
+      "full_name": "T1569: System Services",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1569.001": {
+      "full_name": "T1569.001: Launchctl",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1569.002": {
+      "full_name": "T1569.002: Service Execution",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1570": {
+      "full_name": "T1570: Lateral Tool Transfer",
+      "tactic_full_name": "TA0008: Lateral Movement"
+    },
+    "T1571": {
+      "full_name": "T1571: Non-Standard Port",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1572": {
+      "full_name": "T1572: Protocol Tunneling",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1573": {
+      "full_name": "T1573: Encrypted Channel",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1573.001": {
+      "full_name": "T1573.001: Symmetric Cryptography",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1573.002": {
+      "full_name": "T1573.002: Asymmetric Cryptography",
+      "tactic_full_name": "TA0011: Command and Control"
+    },
+    "T1574": {
+      "full_name": "T1574: Hijack Execution Flow",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.001": {
+      "full_name": "T1574.001: DLL Search Order Hijacking",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.002": {
+      "full_name": "T1574.002: DLL Side-Loading",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.004": {
+      "full_name": "T1574.004: Dylib Hijacking",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.005": {
+      "full_name": "T1574.005: Executable Installer File Permissions Weakness",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.006": {
+      "full_name": "T1574.006: Dynamic Linker Hijacking",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.007": {
+      "full_name": "T1574.007: Path Interception by PATH Environment Variable",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.008": {
+      "full_name": "T1574.008: Path Interception by Search Order Hijacking",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.009": {
+      "full_name": "T1574.009: Path Interception by Unquoted Path",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.010": {
+      "full_name": "T1574.010: Services File Permissions Weakness",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.011": {
+      "full_name": "T1574.011: Services Registry Permissions Weakness",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.012": {
+      "full_name": "T1574.012: COR_PROFILER",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.013": {
+      "full_name": "T1574.013: KernelCallbackTable",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1574.014": {
+      "full_name": "T1574.014: AppDomainManager",
+      "tactic_full_name": "TA0003: Persistence, TA0004: Privilege Escalation, TA0005: Defense Evasion"
+    },
+    "T1578": {
+      "full_name": "T1578: Modify Cloud Compute Infrastructure",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1578.001": {
+      "full_name": "T1578.001: Create Snapshot",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1578.002": {
+      "full_name": "T1578.002: Create Cloud Instance",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1578.003": {
+      "full_name": "T1578.003: Delete Cloud Instance",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1578.004": {
+      "full_name": "T1578.004: Revert Cloud Instance",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1578.005": {
+      "full_name": "T1578.005: Modify Cloud Compute Configurations",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1580": {
+      "full_name": "T1580: Cloud Infrastructure Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1583": {
+      "full_name": "T1583: Acquire Infrastructure",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1583.001": {
+      "full_name": "T1583.001: Domains",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1583.002": {
+      "full_name": "T1583.002: DNS Server",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1583.003": {
+      "full_name": "T1583.003: Virtual Private Server",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1583.004": {
+      "full_name": "T1583.004: Server",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1583.005": {
+      "full_name": "T1583.005: Botnet",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1583.006": {
+      "full_name": "T1583.006: Web Services",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1583.007": {
+      "full_name": "T1583.007: Serverless",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1583.008": {
+      "full_name": "T1583.008: Malvertising",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1584": {
+      "full_name": "T1584: Compromise Infrastructure",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1584.001": {
+      "full_name": "T1584.001: Domains",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1584.002": {
+      "full_name": "T1584.002: DNS Server",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1584.003": {
+      "full_name": "T1584.003: Virtual Private Server",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1584.004": {
+      "full_name": "T1584.004: Server",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1584.005": {
+      "full_name": "T1584.005: Botnet",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1584.006": {
+      "full_name": "T1584.006: Web Services",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1584.007": {
+      "full_name": "T1584.007: Serverless",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1584.008": {
+      "full_name": "T1584.008: Network Devices",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1585": {
+      "full_name": "T1585: Establish Accounts",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1585.001": {
+      "full_name": "T1585.001: Social Media Accounts",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1585.002": {
+      "full_name": "T1585.002: Email Accounts",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1585.003": {
+      "full_name": "T1585.003: Cloud Accounts",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1586": {
+      "full_name": "T1586: Compromise Accounts",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1586.001": {
+      "full_name": "T1586.001: Social Media Accounts",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1586.002": {
+      "full_name": "T1586.002: Email Accounts",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1586.003": {
+      "full_name": "T1586.003: Cloud Accounts",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1587": {
+      "full_name": "T1587: Develop Capabilities",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1587.001": {
+      "full_name": "T1587.001: Malware",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1587.002": {
+      "full_name": "T1587.002: Code Signing Certificates",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1587.003": {
+      "full_name": "T1587.003: Digital Certificates",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1587.004": {
+      "full_name": "T1587.004: Exploits",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1588": {
+      "full_name": "T1588: Obtain Capabilities",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1588.001": {
+      "full_name": "T1588.001: Malware",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1588.002": {
+      "full_name": "T1588.002: Tool",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1588.003": {
+      "full_name": "T1588.003: Code Signing Certificates",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1588.004": {
+      "full_name": "T1588.004: Digital Certificates",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1588.005": {
+      "full_name": "T1588.005: Exploits",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1588.006": {
+      "full_name": "T1588.006: Vulnerabilities",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1588.007": {
+      "full_name": "T1588.007: Artificial Intelligence",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1589": {
+      "full_name": "T1589: Gather Victim Identity Information",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1589.001": {
+      "full_name": "T1589.001: Credentials",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1589.002": {
+      "full_name": "T1589.002: Email Addresses",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1589.003": {
+      "full_name": "T1589.003: Employee Names",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1590": {
+      "full_name": "T1590: Gather Victim Network Information",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1590.001": {
+      "full_name": "T1590.001: Domain Properties",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1590.002": {
+      "full_name": "T1590.002: DNS",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1590.003": {
+      "full_name": "T1590.003: Network Trust Dependencies",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1590.004": {
+      "full_name": "T1590.004: Network Topology",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1590.005": {
+      "full_name": "T1590.005: IP Addresses",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1590.006": {
+      "full_name": "T1590.006: Network Security Appliances",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1591": {
+      "full_name": "T1591: Gather Victim Org Information",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1591.001": {
+      "full_name": "T1591.001: Determine Physical Locations",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1591.002": {
+      "full_name": "T1591.002: Business Relationships",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1591.003": {
+      "full_name": "T1591.003: Identify Business Tempo",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1591.004": {
+      "full_name": "T1591.004: Identify Roles",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1592": {
+      "full_name": "T1592: Gather Victim Host Information",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1592.001": {
+      "full_name": "T1592.001: Hardware",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1592.002": {
+      "full_name": "T1592.002: Software",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1592.003": {
+      "full_name": "T1592.003: Firmware",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1592.004": {
+      "full_name": "T1592.004: Client Configurations",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1593": {
+      "full_name": "T1593: Search Open Websites/Domains",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1593.001": {
+      "full_name": "T1593.001: Social Media",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1593.002": {
+      "full_name": "T1593.002: Search Engines",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1593.003": {
+      "full_name": "T1593.003: Code Repositories",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1594": {
+      "full_name": "T1594: Search Victim-Owned Websites",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1595": {
+      "full_name": "T1595: Active Scanning",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1595.001": {
+      "full_name": "T1595.001: Scanning IP Blocks",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1595.002": {
+      "full_name": "T1595.002: Vulnerability Scanning",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1595.003": {
+      "full_name": "T1595.003: Wordlist Scanning",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1596": {
+      "full_name": "T1596: Search Open Technical Databases",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1596.001": {
+      "full_name": "T1596.001: DNS/Passive DNS",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1596.002": {
+      "full_name": "T1596.002: WHOIS",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1596.003": {
+      "full_name": "T1596.003: Digital Certificates",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1596.004": {
+      "full_name": "T1596.004: CDNs",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1596.005": {
+      "full_name": "T1596.005: Scan Databases",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1597": {
+      "full_name": "T1597: Search Closed Sources",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1597.001": {
+      "full_name": "T1597.001: Threat Intel Vendors",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1597.002": {
+      "full_name": "T1597.002: Purchase Technical Data",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1598": {
+      "full_name": "T1598: Phishing for Information",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1598.001": {
+      "full_name": "T1598.001: Spearphishing Service",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1598.002": {
+      "full_name": "T1598.002: Spearphishing Attachment",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1598.003": {
+      "full_name": "T1598.003: Spearphishing Link",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1598.004": {
+      "full_name": "T1598.004: Spearphishing Voice",
+      "tactic_full_name": "TA0043: Reconnaissance"
+    },
+    "T1599": {
+      "full_name": "T1599: Network Boundary Bridging",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1599.001": {
+      "full_name": "T1599.001: Network Address Translation Traversal",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1600": {
+      "full_name": "T1600: Weaken Encryption",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1600.001": {
+      "full_name": "T1600.001: Reduce Key Space",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1600.002": {
+      "full_name": "T1600.002: Disable Crypto Hardware",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1601": {
+      "full_name": "T1601: Modify System Image",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1601.001": {
+      "full_name": "T1601.001: Patch System Image",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1601.002": {
+      "full_name": "T1601.002: Downgrade System Image",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1602": {
+      "full_name": "T1602: Data from Configuration Repository",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1602.001": {
+      "full_name": "T1602.001: SNMP (MIB Dump)",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1602.002": {
+      "full_name": "T1602.002: Network Device Configuration Dump",
+      "tactic_full_name": "TA0009: Collection"
+    },
+    "T1606": {
+      "full_name": "T1606: Forge Web Credentials",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1606.001": {
+      "full_name": "T1606.001: Web Cookies",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1606.002": {
+      "full_name": "T1606.002: SAML Tokens",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1608": {
+      "full_name": "T1608: Stage Capabilities",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1608.001": {
+      "full_name": "T1608.001: Upload Malware",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1608.002": {
+      "full_name": "T1608.002: Upload Tool",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1608.003": {
+      "full_name": "T1608.003: Install Digital Certificate",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1608.004": {
+      "full_name": "T1608.004: Drive-by Target",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1608.005": {
+      "full_name": "T1608.005: Link Target",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1608.006": {
+      "full_name": "T1608.006: SEO Poisoning",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1609": {
+      "full_name": "T1609: Container Administration Command",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1610": {
+      "full_name": "T1610: Deploy Container",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0002: Execution"
+    },
+    "T1611": {
+      "full_name": "T1611: Escape to Host",
+      "tactic_full_name": "TA0004: Privilege Escalation"
+    },
+    "T1612": {
+      "full_name": "T1612: Build Image on Host",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1613": {
+      "full_name": "T1613: Container and Resource Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1614": {
+      "full_name": "T1614: System Location Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1614.001": {
+      "full_name": "T1614.001: System Language Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1615": {
+      "full_name": "T1615: Group Policy Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1619": {
+      "full_name": "T1619: Cloud Storage Object Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1620": {
+      "full_name": "T1620: Reflective Code Loading",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1621": {
+      "full_name": "T1621: Multi-Factor Authentication Request Generation",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1622": {
+      "full_name": "T1622: Debugger Evasion",
+      "tactic_full_name": "TA0005: Defense Evasion, TA0007: Discovery"
+    },
+    "T1647": {
+      "full_name": "T1647: Plist File Modification",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1648": {
+      "full_name": "T1648: Serverless Execution",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1649": {
+      "full_name": "T1649: Steal or Forge Authentication Certificates",
+      "tactic_full_name": "TA0006: Credential Access"
+    },
+    "T1650": {
+      "full_name": "T1650: Acquire Access",
+      "tactic_full_name": "TA0042: Resource Development"
+    },
+    "T1651": {
+      "full_name": "T1651: Cloud Administration Command",
+      "tactic_full_name": "TA0002: Execution"
+    },
+    "T1652": {
+      "full_name": "T1652: Device Driver Discovery",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1653": {
+      "full_name": "T1653: Power Settings",
+      "tactic_full_name": "TA0003: Persistence"
+    },
+    "T1654": {
+      "full_name": "T1654: Log Enumeration",
+      "tactic_full_name": "TA0007: Discovery"
+    },
+    "T1656": {
+      "full_name": "T1656: Impersonation",
+      "tactic_full_name": "TA0005: Defense Evasion"
+    },
+    "T1657": {
+      "full_name": "T1657: Financial Theft",
+      "tactic_full_name": "TA0040: Impact"
+    },
+    "T1659": {
+      "full_name": "T1659: Content Injection",
+      "tactic_full_name": "TA0001: Initial Access, TA0011: Command and Control"
+    },
+    "T1665": {
+      "full_name": "T1665: Hide Infrastructure",
+      "tactic_full_name": "TA0011: Command and Control"
+    }
+  }
+}
